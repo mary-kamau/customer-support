@@ -1,7 +1,7 @@
 <div>
     <div class="messages">
         @foreach($messages as $message)
-            <div class="message">
+            <div class="message {{ $message->user_id == 0 ? 'bot' : 'user' }}">
                 <p>{{ $message->content }}</p>
                 <span>{{ $message->created_at->diffForHumans() }}</span>
             </div>
